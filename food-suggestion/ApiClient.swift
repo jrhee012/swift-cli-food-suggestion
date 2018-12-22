@@ -117,7 +117,7 @@ class YelpApiClient: ApiClient {
         
     }
     
-    public func makeCall(term: String) {
+    private func makeCall(term: String) {
         let url = self.createURLWithString(term: term)
         let yelpApiKey = "Bearer iHwv5fTrw6hN5RRxYMAlwiVRRe82Y2rj0cHh29PrnmlqUdqEmeWDI7b3o2Ddjh4uhw_26lKcigfqgBEbRonpD2FpqoZ3PXCAUk2rim0wayPee4qIiRzsOcYzvPbsW3Yx"
         let request = NSMutableURLRequest(url:url! as URL);
@@ -133,4 +133,10 @@ class YelpApiClient: ApiClient {
         }
         
     }
+    
+    public func queryTerm(term: String) {
+        let spaceRemoved = term.replacingOccurrences(of: " ", with: "")
+        self.makeCall(term: spaceRemoved)
+    }
+    
 }

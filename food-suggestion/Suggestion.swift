@@ -11,7 +11,8 @@ import Foundation
 enum OptionType: String {
     case help = "h"
     case quit = "q"
-    case call = "c"
+    case search = "s"
+    case reservation = "r"
     case unknown
 
     
@@ -20,8 +21,10 @@ enum OptionType: String {
         case "h": self = .help
         case "help": self = .help
         case "q": self = .quit
-        case "c": self = .call
-        case "call": self = .call
+        case "s": self = .search
+        case "search": self = .search
+        case "r": self = .reservation
+        case "reservation": self = .reservation
         default: self = .unknown
         }
     }
@@ -48,19 +51,26 @@ class Suggestion {
         var shouldQuit = false
         while !shouldQuit {
             consoleIO.writeMessage("Type 'h' for help type 'q' to quit.")
-            let (option, value) = getOption(consoleIO.getInput())
+            let (option, _) = getOption(consoleIO.getInput())
             
             switch option {
             case .help:
                 consoleIO.writeMessage("HELP")
                 consoleIO.printUsage()
-            case .unknown, .quit:
-                consoleIO.writeMessage("Unknown command. Exiting...")
+            case .quit:
+                consoleIO.writeMessage("Bye bye.")
                 shouldQuit = true
-            case .call:
+            case .unknown:
+                consoleIO.writeMessage("Unknown command.")
+                consoleIO.printUsage()
+            case .search:
                 consoleIO.writeMessage("Type query term:")
                 let yelpApiClient = YelpApiClient()
-                yelpApiClient.makeCall(term: consoleIO.getInput())
+                yelpApiClient.queryTerm(term: consoleIO.getInput())
+            case .reservation:
+                consoleIO.writeMessage("Type restaurant name:")
+                let yelpApiClient = YelpApiClient()
+                yelpApiClient.queryTerm(term: consoleIO.getInput())
             }
         }
     }
