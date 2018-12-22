@@ -10,6 +10,7 @@
 		AE5DE5ED21CDFD19005F2206 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5DE5EC21CDFD19005F2206 /* main.swift */; };
 		AE5DE5F421CDFD68005F2206 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5DE5F321CDFD68005F2206 /* ConsoleIO.swift */; };
 		AE5DE5F621CDFDC7005F2206 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5DE5F521CDFDC7005F2206 /* Suggestion.swift */; };
+		AE5DE5F821CE042A005F2206 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5DE5F721CE042A005F2206 /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		AE5DE5EC21CDFD19005F2206 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE5DE5F321CDFD68005F2206 /* ConsoleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		AE5DE5F521CDFDC7005F2206 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		AE5DE5F721CE042A005F2206 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				AE5DE5EC21CDFD19005F2206 /* main.swift */,
 				AE5DE5F321CDFD68005F2206 /* ConsoleIO.swift */,
 				AE5DE5F521CDFDC7005F2206 /* Suggestion.swift */,
+				AE5DE5F721CE042A005F2206 /* ApiClient.swift */,
 			);
 			path = "food-suggestion";
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 				AE5DE5ED21CDFD19005F2206 /* main.swift in Sources */,
 				AE5DE5F421CDFD68005F2206 /* ConsoleIO.swift in Sources */,
 				AE5DE5F621CDFDC7005F2206 /* Suggestion.swift in Sources */,
+				AE5DE5F821CE042A005F2206 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

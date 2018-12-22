@@ -10,14 +10,16 @@ import Foundation
 
 enum OptionType: String {
     case help = "h"
-    case unknown
     case quit = "q"
+    case call = "c"
+    case unknown
 
     
     init(value: String) {
         switch value {
         case "h": self = .help
         case "q": self = .quit
+        case "c": self = .call
         default: self = .unknown
         }
     }
@@ -54,6 +56,10 @@ class Suggestion {
             case .unknown, .quit:
                 consoleIO.writeMessage("Unknown command. Exiting...")
                 shouldQuit = true
+            case .call:
+                consoleIO.writeMessage("Type query term:")
+                let apiClient = ApiClient()
+                apiClient.makeCall(term: consoleIO.getInput())
             }
         }
     }
