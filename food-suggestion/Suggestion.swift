@@ -18,8 +18,10 @@ enum OptionType: String {
     init(value: String) {
         switch value {
         case "h": self = .help
+        case "help": self = .help
         case "q": self = .quit
         case "c": self = .call
+        case "call": self = .call
         default: self = .unknown
         }
     }
@@ -38,7 +40,6 @@ class Suggestion {
     }
     
     func getOption(_ option: String) -> (option:OptionType, value: String) {
-        print(option)
         return (OptionType(value: option), option)
     }
     
@@ -58,8 +59,8 @@ class Suggestion {
                 shouldQuit = true
             case .call:
                 consoleIO.writeMessage("Type query term:")
-                let apiClient = ApiClient()
-                apiClient.makeCall(term: consoleIO.getInput())
+                let yelpApiClient = YelpApiClient()
+                yelpApiClient.makeCall(term: consoleIO.getInput())
             }
         }
     }
