@@ -10,3 +10,11 @@ import Foundation
 
 print("Hello, World!")
 
+let suggestion = Suggestion()
+//suggestion.staticMode()
+
+if CommandLine.argc < 2 {
+    suggestion.interactiveMode()
+} else {
+    suggestion.staticMode()
+}
